@@ -32,7 +32,7 @@ O personagem principal do jogo é Tux, um pinguim inspirado no mascote do sistem
 
 Tux possui as seguintes habilidades:
 
-* Movimentação lateral (direita e esquerda)
+* Movimentação para os lados (direita e esquerda)
 * Pulo
 * Pulo duplo
 * Agachar
