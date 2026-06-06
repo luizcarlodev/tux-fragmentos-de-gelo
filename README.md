@@ -1,234 +1,319 @@
-# Tux
+# 🐧 Tux: Fragmentos de Gelo
 
-## Fragmentos de Gelo
-
----
-
-## 1. Descrição Geral
-
-*Tux* é um jogo 2D dos gêneros plataforma, aventura e ação, desenvolvido com a biblioteca Pygame.
-
-O jogo se passa em diferentes partes do mundo, onde cada fase representa um continente distinto, com cenários únicos que refletem o ambiente local.
-
-A história acompanha Tux, um pinguim que, após o descongelamento de uma geleira, perde seu grande amor, que é levado para o mar aberto e desaparece pelo mundo. Determinado a encontrá-la, Tux embarca em uma jornada global, atravessando diversos continentes e enfrentando desafios para resgatar seu amor perdido.
+**Uma aventura gelada de coragem e reencontro**
 
 ---
 
-## 2. Objetivo do Jogo
+## 📌 Descrição Geral
 
-O objetivo principal do jogo é guiar Tux através de diferentes fases distribuídas em continentes ao redor do mundo, enfrentando desafios e obstáculos até reunir todos os fragmentos de gelo.
+**Tux: Fragmentos de Gelo** é um jogo 2D dos gêneros **plataforma, aventura e ação**, desenvolvido utilizando a biblioteca **Pygame**.
 
-Cada fase concluída com sucesso recompensa o jogador com um fragmento de gelo. Ao coletar os 5 fragmentos, eles se unem para formar uma chave especial, que desbloqueia a fase final do jogo, onde o amor perdido de Tux está localizado.
+O jogador controla **Tux**, um pinguim inspirado no mascote do GNU/Linux, em uma jornada por diferentes cenários para encontrar seu amor perdido após um desastre natural.
 
-Para concluir cada fase, o jogador deverá atravessar o cenário utilizando mecânicas de plataforma (como saltos e movimentação estilo parkour), enfrentar inimigos e superar obstáculos até alcançar o objetivo final da fase.
+O jogo possui progressão linear, combate simples, obstáculos de plataforma e coleta de itens especiais.
 
-O jogador perde ao esgotar todas as suas vidas. Durante as fases, é possível perder vidas ao cair em buracos, sofrer dano de inimigos, projéteis ou armadilhas.
-
----
-
-## 3. Personagem Principal
-
-O personagem principal do jogo é Tux, um pinguim inspirado no mascote do sistema GNU/Linux. Na história, ele embarca em uma jornada ao redor do mundo em busca de seu amor perdido.
-
-Tux possui as seguintes habilidades:
-
-* Movimentação para os lados (direita e esquerda)
-* Pulo
-* Pulo duplo
-* Agachar
-* Dash
-* Ataque básico
-* Ataque especial
-
-Seus principais atributos incluem:
-
-* Vida (3 vidas)
-* Velocidade
-* Pontuação
-* Ataque
-* Energia (utilizada para habilidades especiais)
+A duração estimada do jogo é de **3 a 5 minutos**.
 
 ---
 
-## 4. Inimigos e Obstáculos
+## 🎯 Objetivo do Jogo
 
-Os inimigos do jogo são inspirados nos continentes visitados por Tux, trazendo variedade a cada fase.
+O objetivo principal é controlar Tux através de **3 fases**, superando inimigos e obstáculos até coletar todos os **Fragmentos de Gelo**.
 
-Exemplos:
+Ao reunir os **3 fragmentos**, uma chave especial é formada, desbloqueando o caminho até o local onde o amor perdido de Tux está.
 
-* Floresta: macacos e criaturas ágeis
-* Gelo: inimigos congelados
-* Deserto: escorpiões
-* Montanhas: aves
-* Praias/oceano: caranguejos
+### Condição de vitória:
 
-Os inimigos comuns se movimentam automaticamente em padrões simples. Já os chefes (bosses) possuem comportamentos mais complexos e atacam o jogador ao se aproximar.
+* Completar as 3 fases
+* Coletar os 3 Fragmentos de Gelo
+* Encontrar o amor perdido de Tux
 
-Interações:
+---
 
-* Ao encostar em inimigos ou projéteis, o jogador perde vida, sofre knockback e ganha invencibilidade temporária
-* Ao atacar inimigos, eles recebem dano e podem ser derrotados
+## 📖 História do Jogo
 
-Obstáculos incluem:
+Após o derretimento de uma antiga geleira, uma forte corrente marítima separa Tux de seu grande amor.
+
+Sem saber para onde ela foi levada, Tux encontra uma antiga lenda sobre os **Fragmentos de Gelo**, artefatos mágicos capazes de revelar caminhos perdidos.
+
+Determinado a reencontrá-la, Tux inicia uma jornada atravessando diferentes regiões, enfrentando obstáculos e perigos até reunir os fragmentos necessários para encontrá-la novamente.
+
+---
+
+## 🐧 Personagem Principal
+
+O personagem principal do jogo é **Tux**, um pinguim aventureiro inspirado no mascote do sistema GNU/Linux.
+
+### Movimentação
+
+* Andar para esquerda (**A**)
+* Andar para direita (**D**)
+* Pular (**Espaço**)
+* Dash (**Q**)
+
+### Ações
+
+* Ataque básico (**J**)
+
+### Atributos
+
+* ❤️ Vida: 3 corações
+* ⚡ Velocidade
+* 🏆 Pontuação
+* 🛡️ Invencibilidade temporária após dano
+
+---
+
+## 👾 Inimigos e Obstáculos
+
+Cada fase possui inimigos inspirados no ambiente visitado.
+
+### Fase 1 — Geleira
+
+**Inimigos:**
+
+* Criaturas congeladas
+
+**Comportamento:**
+
+* Movimento automático simples
+
+---
+
+### Fase 2 — Floresta
+
+**Inimigos:**
+
+* Macacos
+
+**Comportamento:**
+
+* Movimento rápido entre plataformas
+
+---
+
+### Fase 3 — Deserto
+
+**Inimigos:**
+
+* Escorpiões
+
+**Comportamento:**
+
+* Movimento terrestre lento
+
+---
+
+### Obstáculos
 
 * Buracos
-* Plataformas (parkour)
-* Superfícies escorregadias
-* Espinhos e armadilhas
+* Espinhos
+* Plataformas elevadas
+* Trechos de parkour simples
 
----
+### Interações
 
-## 5. Cenário (Mapa)
+Ao encostar em inimigos ou armadilhas:
 
-O jogo apresenta mapas 2D com progressão linear (da esquerda para a direita).
-
-Características:
-
-* Chão sólido e plataformas
-* Estrutura linear
-* Possíveis áreas secretas (easter eggs)
-
-Os fragmentos de gelo estão localizados ao final de cada fase, geralmente após um desafio final.
-
-Ao coletar o fragmento:
-
-* A fase é concluída automaticamente
-* A próxima fase é desbloqueada
-
-O jogo não possui checkpoints, exigindo consistência do jogador.
-
----
-
-## 6. Sistema de Pontuação
-
-A pontuação é baseada na eliminação de inimigos e conclusão da fase.
-
-Para obter a pontuação máxima, o jogador deve:
-
-* Derrotar todos os inimigos
-* Derrotar o boss
-* Completar a fase
-
-A pontuação total pode atingir um valor máximo (ex: 100 pontos por fase).
-
----
-
-## 7. Sistema de Vida
-
-O jogador inicia com 3 vidas.
-
-Perde vida ao:
-
-* Cair em buracos
-* Encostar em inimigos
-* Ser atingido por projéteis
-* Tocar em armadilhas
-
-Ao sofrer dano:
-
-* Perde uma vida
+* O jogador perde vida
 * Sofre knockback
 * Recebe invencibilidade temporária
 
-Ao perder todas as vidas:
+Ao atacar inimigos:
 
-* A fase é reiniciada do início
-
-O jogo possui itens de cura (corações) espalhados pelo mapa.
-
----
-
-## 8. Controles
-
-* **A / D** → Movimentação
-* **Espaço** → Pular
-* **Q** → Dash
-* **J** → Ataque básico
-* **K** → Ataque especial
-* **Esc** → Menu de pausa
-
-O menu de pausa permite continuar ou sair do jogo.
+* Eles recebem dano
+* Podem ser derrotados
 
 ---
 
-## 9. Fluxo do Jogo
+## 🗺️ Cenário (Mapa)
 
-O jogo inicia com uma tela de abertura, seguida por um menu principal.
+O jogo possui mapas 2D lineares, com progressão da esquerda para a direita.
 
-O jogador pode selecionar fases desbloqueadas e iniciar a jogabilidade.
+### Fase 1 — Geleira
 
-Durante o jogo:
+Mapa introdutório com obstáculos simples.
 
-* As fases seguem progressão linear
-* Ao concluir uma fase, uma tela de conclusão pode ser exibida com pontuação e opções
+### Fase 2 — Floresta
 
-Caso o jogador perca todas as vidas:
+Mapa com mais plataformas e verticalidade.
 
-* Uma tela de "Game Over" é exibida
-* O jogador reinicia a fase atual (sem perder progresso geral)
+### Fase 3 — Deserto
 
-O jogo é vencido ao completar todas as fases e resgatar o amor perdido de Tux.
+Mapa com armadilhas e maior dificuldade.
+
+No final de cada fase está localizado um **Fragmento de Gelo**, necessário para progressão do jogo.
 
 ---
 
-## 10. Regras do Jogo
+## 🏆 Sistema de Pontuação
 
-* O jogador não pode atravessar paredes (exceto em áreas secretas)
+O jogador ganha pontos ao:
+
+| Ação             | Pontos |
+| ---------------- | ------ |
+| Derrotar inimigo | 10     |
+| Completar fase   | 50     |
+| Finalizar jogo   | Bônus  |
+
+Pontuação máxima aproximada:
+
+**100 pontos por fase**
+
+---
+
+## ❤️ Sistema de Vida
+
+O jogador inicia o jogo com:
+
+**❤️❤️❤️ (3 vidas)**
+
+### O jogador perde vida ao:
+
+* Encostar em inimigos
+* Cair em armadilhas
+* Cair em buracos
+
+### Quando as vidas acabam:
+
+* Tela de **Game Over**
+* Reinício da fase atual
+
+Itens de cura podem aparecer durante as fases.
+
+---
+
+## 🎮 Controles
+
+| Tecla      | Função              |
+| ---------- | ------------------- |
+| **A**      | Andar para esquerda |
+| **D**      | Andar para direita  |
+| **Espaço** | Pular               |
+| **Q**      | Dash                |
+| **J**      | Ataque básico       |
+| **ESC**    | Menu de pausa       |
+
+---
+
+## 🔄 Fluxo do Jogo
+
+### Início
+
+1. Tela de abertura
+2. Menu principal
+3. Botão **Jogar**
+
+### Durante o jogo
+
+* O jogador atravessa as fases
+* Enfrenta inimigos
+* Supera obstáculos
+* Coleta Fragmentos de Gelo
+
+### Vitória
+
+* Coleta os 3 fragmentos
+* Libera o caminho final
+* Tux reencontra seu amor perdido
+
+### Derrota
+
+* Todas as vidas acabam
+* Tela de Game Over
+* Reinício da fase
+
+---
+
+## 📜 Regras do Jogo
+
+* O jogador não pode atravessar paredes
 * Não é possível sair dos limites do mapa
-* Colisão com paredes bloqueia movimento
-* É necessário coletar o fragmento para concluir a fase
-* Derrotar inimigos contribui para pontuação e progressão (regra pode ser ajustada)
+* O fragmento deve ser coletado para concluir a fase
+* Colisão com inimigos causa dano
+* Cair em buracos remove uma vida
+* O jogador possui invencibilidade temporária após sofrer dano
 
 ---
 
-## 11. Estrutura do Projeto
+## 📁 Estrutura do Projeto
 
-O projeto será modularizado utilizando programação orientada a objetos.
+```txt
+tux-fragmentos-de-gelo/
+│── assets/
+│   ├── player/
+│   ├── enemies/
+│   ├── backgrounds/
+│   ├── sounds/
+│
+│── main.py
+│── player.py
+│── enemy.py
+│── map.py
+│── ui.py
+│── config.py
+│── utils.py
+│
+│── README.md
+│── requirements.txt
+```
 
-Estrutura sugerida:
+### Responsabilidades dos Arquivos
 
-* `main.py`
-* `player.py`
-* `enemy.py`
-* `boss.py`
-* `map.py`
-* `items.py`
-* `config.py`
-* `utils.py`
-
-Essa organização facilita manutenção e expansão do projeto.
+| Arquivo     | Responsabilidade             |
+| ----------- | ---------------------------- |
+| `main.py`   | Execução principal do jogo   |
+| `player.py` | Classe do jogador            |
+| `enemy.py`  | Comportamento dos inimigos   |
+| `map.py`    | Sistema de mapas             |
+| `ui.py`     | Interface (vida e pontuação) |
+| `config.py` | Configurações gerais         |
+| `utils.py`  | Funções auxiliares           |
 
 ---
 
-## 12. Funcionalidades Mínimas
+## ✅ Funcionalidades Mínimas
 
-A primeira versão do jogo deve conter:
+A primeira versão do jogo deverá conter obrigatoriamente:
 
 * Movimentação do personagem
 * Sistema de pulo
-* Pelo menos uma fase jogável
-* Inimigos funcionando
+* Dash
+* Ataque básico
 * Sistema de vida
-
-O objetivo é garantir um jogo funcional básico antes de expansões.
+* Pelo menos 1 fase funcional
+* Inimigos funcionando
+* Tela de vitória ou derrota
 
 ---
 
-## 13. Melhorias Futuras
+## 🚀 Melhorias Futuras
 
-* Novas habilidades (wall jump, upgrades)
-* Sistema de evolução do personagem
-* Mais fases e continentes
-* Novos inimigos
-* Bosses mais complexos
-* Sistema de ranking/pontuação
-* Itens colecionáveis
-* Sistema de energia (stamina)
+* Pulo duplo
+* Ataque especial
+* Mais continentes
+* Chefes (Bosses)
+* Ranking de pontuação
+* Sistema de energia
 * Checkpoints
-* HUD aprimorado
+* Melhorias visuais
 * Sons e trilha sonora
-* Melhorias visuais e animações
-* Menu de configurações
-* Expansão da história
+* Mais animações
 
 ---
+
+## 🖼️ Storyboard do Jogo
+
+O storyboard abaixo representa visualmente a jornada de Tux, desde a separação causada pelo desastre natural até o reencontro final.
+
+<p align="center">
+  <img src="docs/storyboard.png" width="900">
+</p>
+
+### Principais Cenas
+- ❄️ Separação de Tux e seu amor  
+- 🧊 Descoberta dos Fragmentos de Gelo  
+- 🏔️ Fase da Geleira  
+- 🌳 Fase da Floresta  
+- 🏜️ Fase do Deserto  
+- 💙 Reencontro final
