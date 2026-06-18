@@ -10,6 +10,7 @@ FPS = 60
 
 LARGURA = 800
 ALTURA = 600
+CHAO_Y = 550
 
 tela = pygame.display.set_mode(
     (LARGURA, ALTURA)
@@ -43,6 +44,8 @@ while rodando:
     tux.pular(teclas)
 
     tela.fill((0, 0, 0))
+
+    pygame.draw.rect(tela, (100, 100, 100), (0, CHAO_Y, LARGURA, ALTURA - CHAO_Y))
 
     #Desenha o personagem
     tux.desenhar(tela)
