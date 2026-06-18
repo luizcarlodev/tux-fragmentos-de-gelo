@@ -34,6 +34,14 @@ class Player(Entidade):
                 0
             )
 
+        # colisão - esquerda
+        if self.x < 0:
+            self.x = 0
+
+        # colisão - direita
+        if self.x > 750:
+            self.x = 750
+
     def pular(self, teclas):
 
         if teclas[pygame.K_SPACE] and not self.pulando:
@@ -45,7 +53,7 @@ class Player(Entidade):
 
         self.y += self.velocidade_y
 
-        #chao temporario
+        # chao temporario
         if self.y >= 500:
             self.y = 500
             self.velocidade_y = 0
