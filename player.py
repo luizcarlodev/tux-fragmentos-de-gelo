@@ -1,3 +1,4 @@
+import config
 import pygame
 from entidade import Entidade
 
@@ -5,19 +6,13 @@ from entidade import Entidade
 class Player(Entidade):
 
     def __init__(self, x, y):
-        super().__init__(
-            x,
-            y,
-            50,
-            50,
-            3
-        )
+        super().__init__(x, y, config.PLAYER_LARGURA, config.PLAYER_ALTURA, config.PLAYER_VIDA_INICIAL)
 
         self.pontuacao = 0
-        self.velocidade = 4
+        self.velocidade = config.PLAYER_VELOCIDADE
 
         self.velocidade_y = 0
-        self.gravidade = 0.8
+        self.gravidade = config.PLAYER_GRAVIDADE
         self.pulando = False
 
     def mover_player(self, teclas):
@@ -34,19 +29,19 @@ class Player(Entidade):
                 0
             )
 
-        # colisão - esquerda
-        if self.x < 0:
-            self.x = 0
+        # colisão(esquerda)
+        if self.x < config.LIMITE_ESQUERDA:
+            self.x = config.LIMITE_ESQUERDA
 
-        # colisão - direita
-        if self.x > 750:
-            self.x = 750
+        # colisão(direita)
+        if self.x > config.LIMITE_DIREITA:
+            self.x = config.LIMITE_DIREITA
 
     def pular(self, teclas):
 
         if teclas[pygame.K_SPACE] and not self.pulando:
 
-            self.velocidade_y = -15
+            self.velocidade_y = config.PLAYER_FORCA_PULO
             self.pulando = True
 
         self.velocidade_y += self.gravidade
@@ -54,15 +49,12 @@ class Player(Entidade):
         self.y += self.velocidade_y
 
         # chao temporario
-        if self.y >= 500:
-            self.y = 500
+        if self.y >= config.CHAO_Y:
+            self.y = config.CHAO_Y
             self.velocidade_y = 0
             self.pulando = False
-
+        
         self.rect.y = self.y
 
     def desenhar(self, tela):
-        super().desenhar(
-            tela,
-            (0, 150, 255)
-        )
+        super().desenhar(tela, config.COR_TUX)
