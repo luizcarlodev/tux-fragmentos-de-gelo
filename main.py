@@ -1,3 +1,5 @@
+import map
+import config
 import pygame
 from menu import Menu
 from player import Player
@@ -6,28 +8,20 @@ from player import Player
 pygame.init()
 
 clock = pygame.time.Clock()
-FPS = 60
 
-LARGURA = 800
-ALTURA = 600
-CHAO_Y = 550
+#constantes removidas -> config.py
 
-tela = pygame.display.set_mode(
-    (LARGURA, ALTURA)
-)
+tela = pygame.display.set_mode((config.LARGURA_TELA, config.ALTURA_TELA))
 
-pygame.display.set_caption(
-    "Tux: Fragmentos de Gelo"
-)
+pygame.display.set_caption("Tux: Fragmentos de Gelo")
 
 menu = Menu(tela)
 menu.executar()
 
 # Spawn do Tux
-tux = Player(
-    100,
-    300
-)
+tux = Player(100, 300)
+
+plataformas = map.criar_plataformas_fase1()
 
 rodando = True
 
@@ -41,17 +35,20 @@ while rodando:
     teclas = pygame.key.get_pressed()
 
     tux.mover_player(teclas)
-    tux.pular(teclas)
+    tux.pular(teclas, plataformas)
+    tux.dash(teclas)
+    tux.atacar(teclas)
 
     tela.fill((0, 0, 0))
 
-    pygame.draw.rect(tela, (100, 100, 100), (0, CHAO_Y, LARGURA, ALTURA - CHAO_Y))
+    for plataforma in plataformas:
+        plataforma.desenhar(tela)
 
     #Desenha o personagem
     tux.desenhar(tela)
 
     pygame.display.update()
 
-    clock.tick(FPS)
+    clock.tick(config.FPS)
 
 pygame.quit()

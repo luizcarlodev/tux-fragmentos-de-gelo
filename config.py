@@ -1,14 +1,16 @@
-# janela
+import pygame
+
+#janela
 LARGURA_TELA = 800
 ALTURA_TELA = 600
 TITULO_JANELA = "Tux: Fragmentos de Gelo"
 FPS = 60
 
-# cores
+#cores
 COR_FUNDO = (20, 20, 30)
 COR_TUX = (0, 150, 255)
 
-# jogador
+#jogador
 PLAYER_LARGURA = 50
 PLAYER_ALTURA = 50
 PLAYER_VIDA_INICIAL = 3
@@ -16,11 +18,23 @@ PLAYER_VELOCIDADE = 4
 PLAYER_GRAVIDADE = 0.8
 PLAYER_FORCA_PULO = -15
 
-# limites do cenario
+#limites do cenario
 CHAO_Y = 500
 LIMITE_ESQUERDA = 0
 LIMITE_DIREITA = 750
 
-# pontuação
+#pontuação
 PONTOS_POR_INIMIGO = 10
 PONTOS_POR_FASE = 50
+
+#dash
+TECLA_DASH = pygame.K_k
+DASH_MULTIPLICADOR = 3
+DASH_DURACAO = 10
+DASH_COOLDOWN = 30
+
+#ataque
+TECLA_ATAQUE = pygame.K_j
+ATAQUE_DURACAO = 15
+ATAQUE_ALCANCE = 40
+ATAQUE_COOLDOWN = 20
