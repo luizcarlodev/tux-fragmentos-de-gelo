@@ -1,5 +1,6 @@
 import map
 import config
+import utils
 import pygame
 from menu import Menu
 from player import Player
@@ -21,6 +22,9 @@ menu.executar()
 # Spawn do Tux
 tux = Player(100, 300)
 
+camera_x = 0
+
+projeteis = []
 plataformas = map.criar_plataformas_fase1()
 
 rodando = True
@@ -37,15 +41,29 @@ while rodando:
     tux.mover_player(teclas)
     tux.pular(teclas, plataformas)
     tux.dash(teclas)
-    tux.atacar(teclas)
 
-    tela.fill((0, 0, 0))
+    camera_x = tux.x - config.LARGURA_TELA // 2
+    camera_x = utils.limitar(camera_x, 0, config.LARGURA_MUNDO - config.LARGURA_TELA)
+
+    novo_projetil = tux.atacar(teclas)
+    if novo_projetil:
+        projeteis.append(novo_projetil)
+
+    for projetil in projeteis[:]:
+        projetil.atualizar()
+        if projetil.fora_da_tela():
+            projeteis.remove(projetil)
+
+    tela.fill(config.COR_FUNDO)
 
     for plataforma in plataformas:
-        plataforma.desenhar(tela)
+        plataforma.desenhar(tela, camera_x)
+
+    for projetil in projeteis:
+        projetil.desenhar(tela, camera_x)
 
     #Desenha o personagem
-    tux.desenhar(tela)
+    tux.desenhar(tela, camera_x)
 
     pygame.display.update()
 

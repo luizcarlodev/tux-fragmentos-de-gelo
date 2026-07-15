@@ -1,3 +1,4 @@
+from projetil import Projetil
 import utils
 import config
 import pygame
@@ -80,23 +81,11 @@ class Player(Entidade):
         if self.ataque_cooldown > 0:
             self.ataque_cooldown -= 1
 
-        if teclas[config.TECLA_ATAQUE] and self.ataque_timer <= 0 and self.ataque_cooldown <= 0:
-            self.ataque_timer = config.ATAQUE_DURACAO
+        if teclas[config.TECLA_ATAQUE] and self.ataque_cooldown <= 0:
             self.ataque_cooldown = config.ATAQUE_COOLDOWN
-            self.atacando = True
+            return Projetil(self.x + self.largura / 2, self.y + self.altura / 2, self.direcao)
 
-        if self.ataque_timer > 0:
-            self.ataque_timer -= 1
-        else:
-            self.atacando = False
+        return None
 
-    def rect_ataque(self):
-        if self.direcao == 1:
-            x = self.x + self.largura
-        else:
-            x = self.x - config.ATAQUE_ALCANCE
-
-        return pygame.Rect(x, self.y, config.ATAQUE_ALCANCE, self.altura)
-
-    def desenhar(self, tela):
-        super().desenhar(tela, config.COR_TUX)
+    def desenhar(self, tela, camera_x=0):
+        super().desenhar(tela, config.COR_TUX, camera_x)

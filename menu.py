@@ -1,5 +1,6 @@
 import pygame
 import sys
+import config
 
 
 class Menu:
@@ -27,6 +28,9 @@ class Menu:
 
     def desenhar(self):
 
+        largura_tela = self.tela.get_width()
+        altura_tela = self.tela.get_height()
+
         self.tela.fill((20, 40, 90))
 
         titulo = self.fonte_titulo.render(
@@ -35,7 +39,8 @@ class Menu:
             (255, 255, 255)
         )
 
-        self.tela.blit(titulo, (160, 120))
+        rect_titulo = titulo.get_rect(center=(largura_tela / 2, altura_tela * 0.25))
+        self.tela.blit(titulo, rect_titulo)
 
         for i, opcao in enumerate(self.opcoes):
 
@@ -50,10 +55,8 @@ class Menu:
                 cor
             )
 
-            self.tela.blit(
-                texto,
-                (340, 250 + i * 60)
-            )
+            rect_texto = texto.get_rect(center=(largura_tela / 2, altura_tela * 0.5 + i * 60))
+            self.tela.blit(texto, rect_texto)
 
     def executar(self):
 
