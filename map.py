@@ -1,6 +1,7 @@
 import config
 import pygame
 from entidade import Entidade
+from enemy import ChefeCriaturaCongelada, ChefeMacaco
 
 class Plataforma(Entidade):
 
@@ -22,3 +23,14 @@ def criar_plataformas_fase1():
         Plataforma(1750, 260, 150, 20),
         Plataforma(2050, 380, 150, 20),
     ]
+
+def criar_chefe1():
+    return ChefeCriaturaCongelada(600, config.CHAO_Y - 80, config.CHEFE1_ARENA_INICIO, config.CHEFE1_ARENA_FIM)
+
+def criar_chefe2():
+    return ChefeMacaco(
+        1400,
+        config.CHAO_Y - 80,
+        config.CHEFE2_ARENA_INICIO,
+        config.CHEFE2_ARENA_FIM
+    )

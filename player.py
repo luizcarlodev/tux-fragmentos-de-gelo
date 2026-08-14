@@ -24,6 +24,7 @@ class Player(Entidade):
         self.atacando = False
         self.ataque_timer = 0
         self.ataque_cooldown = 0
+        self.invencivel_timer = 0
 
     def mover_player(self, teclas):
 
@@ -87,5 +88,18 @@ class Player(Entidade):
 
         return None
 
+    def sofrer_dano(self, origem_x):
+        if self.invencivel_timer > 0:
+            return
+
+        self.receber_dano(config.PLAYER_DANO_INIMIGO)
+
+        direcao_knockback = -1 if self.x > origem_x else 1
+        self.mover(direcao_knockback * config.PLAYER_KNOCKBACK_FORCA, 0)
+
+        self.invencivel_timer = config.PLAYER_INVENCIBILIDADE_DURACAO
+
     def desenhar(self, tela, camera_x=0):
+        if self.invencivel_timer > 0 and self.invencivel_timer % 10 < 5:
+            return
         super().desenhar(tela, config.COR_TUX, camera_x)
