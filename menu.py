@@ -1,7 +1,8 @@
 import pygame
 import sys
 import config
-
+import audio
+from creditos import TelaCreditos
 
 class Menu:
 
@@ -64,6 +65,9 @@ class Menu:
 
             for evento in pygame.event.get():
 
+                if audio.tratar_tecla(evento):
+                    continue
+
                 if evento.type == pygame.QUIT:
                     pygame.quit()
                     sys.exit()
@@ -71,9 +75,11 @@ class Menu:
                 if evento.type == pygame.KEYDOWN:
 
                     if evento.key == pygame.K_UP:
+                        audio.tocar("menu_move")
                         self.selecionado -= 1
 
                     if evento.key == pygame.K_DOWN:
+                        audio.tocar("menu_move")
                         self.selecionado += 1
 
                     self.selecionado %= len(
@@ -81,6 +87,7 @@ class Menu:
                     )
 
                     if evento.key == pygame.K_RETURN:
+                        audio.tocar("menu_confirm")
 
                         opcao = self.opcoes[
                             self.selecionado
@@ -90,9 +97,7 @@ class Menu:
                             return
 
                         elif opcao == "Créditos":
-                            print(
-                                "Projeto criado por Luiz"
-                            )
+                            TelaCreditos(self.tela).executar()
 
                         elif opcao == "Sair":
                             pygame.quit()

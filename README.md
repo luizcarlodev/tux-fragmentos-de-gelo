@@ -317,3 +317,8 @@ O storyboard abaixo representa visualmente a jornada de Tux, desde a separação
 - 🌳 Fase da Floresta  
 - 🏜️ Fase do Deserto  
 - 💙 Reencontro final
+
+
+## Áudio
+
+O projeto inclui trilha sonora e efeitos locais. Veja `README_AUDIO.txt` para controles, execução e créditos. F1 alterna a música; F2 alterna os efeitos sonoros.

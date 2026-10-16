@@ -1,4 +1,5 @@
 import pygame
+import audio
 
 import config
 import utils
@@ -21,6 +22,9 @@ class Jogo:
         self._montar_partida()
 
     def _montar_partida(self):
+        # Toda partida começa com a trilha de exploração; a trilha do boss
+        # entra automaticamente ao alcançar a arena.
+        audio.mudar_musica("normal")
         dados_mapa = mapa_modulo.criar_mapa_fase1()
 
         self.plataformas = dados_mapa["plataformas"]
@@ -55,6 +59,7 @@ class Jogo:
 
     def reiniciar_do_checkpoint(self):
         """Tux com vida cheia e golem resetado. Mini golens e fragmentos continuam."""
+        audio.mudar_musica("normal")
         self.tux = Player(self.x_checkpoint, self.y_checkpoint, self.limite_direita)
 
         gx, gy, arena_inicio, arena_fim = self._golem_params
@@ -74,6 +79,8 @@ class Jogo:
         """Retorna 'vitoria', 'derrota', 'sair' ou 'menu_pausa'."""
         while True:
             for evento in pygame.event.get():
+                if audio.tratar_tecla(evento):
+                    continue
                 if evento.type == pygame.QUIT:
                     return "sair"
 
@@ -185,16 +192,28 @@ class Jogo:
 
             for mini_golem in self.mini_golens:
                 if mini_golem.vida > 0 and utils.checar_colisao(projetil.rect, mini_golem.rect):
+                    vida_antes = mini_golem.vida
                     mini_golem.receber_dano(config.PROJETIL_DANO)
                     atingiu = True
-                    if mini_golem.vida <= 0:
-                        self.fragmentos_coletados += 1
+                    if mini_golem.vida < vida_antes:
+                        if mini_golem.vida <= 0:
+                            audio.tocar("enemy_die")
+                            audio.tocar("collect")
+                            self.fragmentos_coletados += 1
+                        else:
+                            audio.tocar("enemy_hit")
 
             if self.golem.vida > 0 and utils.checar_colisao(projetil.rect, self.golem.rect):
+                vida_antes = self.golem.vida
                 self.golem.receber_dano(config.PROJETIL_DANO)
                 atingiu = True
-                if self.golem.vida <= 0:
-                    self.fragmentos_coletados += 1
+                if self.golem.vida < vida_antes:
+                    if self.golem.vida <= 0:
+                        audio.tocar("enemy_die")
+                        audio.tocar("collect")
+                        self.fragmentos_coletados += 1
+                    else:
+                        audio.tocar("enemy_hit")
 
             if atingiu or projetil.fora_da_tela(self.camera_x):
                 self.projeteis_tux.remove(projetil)
@@ -211,21 +230,32 @@ class Jogo:
 
     def _atualizar_arena_boss(self):
         if self.golem.vida <= 0:
+            if self.arena_ativa:
+                audio.mudar_musica("normal")
+                self.arena_ativa = False
             return
 
         if not self.arena_ativa and self.tux.x >= self.golem.arena_inicio:
             self.arena_ativa = True
+            audio.mudar_musica("boss")
 
         if not self.arena_ativa:
             return
 
         self.golem.comportamento()
+        # A trilha fica mais intensa quando o boss chega à última fase de vida.
+        if self.golem._fase_atual() == 3:
+            audio.mudar_musica("boss_climax")
 
         projetil_pedra = self.golem.atacar_pedra(self.tux.x)
         if projetil_pedra:
+            audio.tocar("boss_attack")
             self.projeteis_golem.append(projetil_pedra)
 
-        self.avisos_chuva.extend(self.golem.atacar_chuva())
+        novos_avisos = self.golem.atacar_chuva()
+        if novos_avisos:
+            audio.tocar("boss_rain")
+        self.avisos_chuva.extend(novos_avisos)
 
         for aviso in self.avisos_chuva[:]:
             aviso.atualizar()
@@ -238,6 +268,7 @@ class Jogo:
             remover = False
 
             if utils.checar_colisao(projetil.rect, self.tux.rect):
+                audio.tocar("boss_impact")
                 self.tux.sofrer_dano(projetil.x)
                 remover = True
             elif isinstance(projetil, CristalGelo) and projetil.atingiu_chao():

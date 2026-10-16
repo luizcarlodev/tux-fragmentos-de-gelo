@@ -1,6 +1,7 @@
 import os
 import pygame
 import config
+import audio
 import sprites
 
 _PASTA_UI = "assets/ui"
@@ -91,6 +92,7 @@ class UI:
 
     def menu_pausa(self, titulo="PAUSADO", texto_opcao_principal="Continuar"):
         """Menu sobre o último frame do jogo. Retorna 'continuar', 'menu' ou 'sair'."""
+        audio.pausar_musica()
         opcoes = [texto_opcao_principal, "Menu Inicial", "Sair do Jogo"]
         valores = ["continuar", "menu", "sair"]
         selecionado = 0
@@ -105,15 +107,23 @@ class UI:
                     pygame.quit()
                     raise SystemExit
 
+                if audio.tratar_tecla(evento):
+                    continue
+
                 if evento.type == pygame.KEYDOWN:
                     if evento.key == pygame.K_ESCAPE:
+                        audio.continuar_musica()
                         return "continuar"
 
                     if evento.key in (pygame.K_UP, pygame.K_DOWN):
+                        audio.tocar("menu_move")
                         passo = 1 if evento.key == pygame.K_DOWN else -1
                         selecionado = (selecionado + passo) % len(opcoes)
 
                     if evento.key == pygame.K_RETURN:
+                        audio.tocar("menu_confirm")
+                        if valores[selecionado] == "continuar":
+                            audio.continuar_musica()
                         return valores[selecionado]
 
             self.tela.blit(overlay, (0, 0))
@@ -134,11 +144,15 @@ class UI:
                     pygame.quit()
                     raise SystemExit
 
+                if audio.tratar_tecla(evento):
+                    continue
                 if evento.type == pygame.KEYDOWN:
                     if evento.key in (pygame.K_UP, pygame.K_DOWN):
+                        audio.tocar("menu_move")
                         selecionado = 1 - selecionado
 
                     if evento.key == pygame.K_RETURN:
+                        audio.tocar("menu_confirm")
                         return "reiniciar" if selecionado == 0 else "menu"
 
             self.tela.fill((20, 20, 30))

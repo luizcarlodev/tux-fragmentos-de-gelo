@@ -1,12 +1,15 @@
 import pygame
 
 import config
+import audio
 from menu import Menu
 from game import Jogo
 
 
 def main():
+    audio.preparar()
     pygame.init()
+    audio.inicializar()
 
     tela = pygame.display.set_mode((config.LARGURA_TELA, config.ALTURA_TELA))
     pygame.display.set_caption(config.TITULO_JANELA)
@@ -17,6 +20,8 @@ def main():
 
     while True:
         if mostrar_menu:
+            audio.mudar_musica("normal")
+            audio.continuar_musica()
             menu.executar()
             jogo = None
 

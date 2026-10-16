@@ -1,6 +1,7 @@
 import utils
 import config
 import pygame
+import audio
 from entidade import Entidade
 from projetil import Projetil
 from animacao import Animacao
@@ -77,6 +78,7 @@ class Player(Entidade):
 
     def pular(self, teclas, plataformas):
         if teclas[pygame.K_SPACE] and not self.pulando:
+            audio.tocar("jump")
             self.velocidade_y = config.PLAYER_FORCA_PULO
             self.pulando = True
 
@@ -104,6 +106,7 @@ class Player(Entidade):
 
         if teclas[config.TECLA_ATAQUE] and self.ataque_cooldown <= 0:
             self.ataque_cooldown = config.ATAQUE_COOLDOWN
+            audio.tocar("attack")
             self.animacao_ataque_timer = _DURACAO_ANIMACAO_ATAQUE
             return Projetil(self.x + self.largura / 2, self.y + self.altura / 2, self.direcao, origem="tux")
 
@@ -115,6 +118,7 @@ class Player(Entidade):
             return False
 
         self.receber_dano(config.PLAYER_DANO_INIMIGO)
+        audio.tocar("player_hurt")
 
         forca = forca_knockback if forca_knockback is not None else config.PLAYER_KNOCKBACK_FORCA
         direcao_knockback = 1 if self.x > origem_x else -1   # empurra para longe da origem
@@ -129,6 +133,7 @@ class Player(Entidade):
             return
 
         self._vida -= config.VOID_DANO_VIDA
+        audio.tocar("player_hurt")
 
         if self._ultima_plataforma_bounds:
             plat_x, plat_largura, plat_y = self._ultima_plataforma_bounds
