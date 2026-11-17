@@ -1,9 +1,0 @@
-"""Fase 1 — A Geleira Perdida (o mapa fica em ``fases/mapas/fase_01.json``)."""
-from fases.fase import Fase
-
-NOME_DO_MAPA = "fase_01"
-
-
-def criar_fase_01(recursos, audio, pontuacao, ao_checkpoint=None, segredo_descoberto=False):
-    """Cria a fase 1 já carregada do JSON."""
-    return Fase(recursos, audio, pontuacao, NOME_DO_MAPA, ao_checkpoint, segredo_descoberto)
