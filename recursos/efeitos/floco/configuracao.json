@@ -1,0 +1,29 @@
+{
+  "arquivo": "efeito.png",
+  "largura_quadro": 8,
+  "altura_quadro": 8,
+  "escala": 3,
+  "animacoes": {
+    "pequeno": {
+      "linha": 0,
+      "quadro_inicial": 0,
+      "quadros": 1,
+      "duracao_quadro": 1.0,
+      "repetir": true
+    },
+    "medio": {
+      "linha": 1,
+      "quadro_inicial": 0,
+      "quadros": 1,
+      "duracao_quadro": 1.0,
+      "repetir": true
+    },
+    "grande": {
+      "linha": 2,
+      "quadro_inicial": 0,
+      "quadros": 1,
+      "duracao_quadro": 1.0,
+      "repetir": true
+    }
+  }
+}

@@ -1,0 +1,99 @@
+{
+  "arquivo": "tileset.png",
+  "largura_quadro": 16,
+  "altura_quadro": 16,
+  "escala": 3,
+  "animacoes": {
+    "grama": {
+      "linha": 0,
+      "quadro_inicial": 0,
+      "quadros": 1,
+      "duracao_quadro": 0.18,
+      "repetir": true
+    },
+    "terra": {
+      "linha": 1,
+      "quadro_inicial": 0,
+      "quadros": 1,
+      "duracao_quadro": 0.18,
+      "repetir": true
+    },
+    "tijolo": {
+      "linha": 2,
+      "quadro_inicial": 0,
+      "quadros": 1,
+      "duracao_quadro": 0.18,
+      "repetir": true
+    },
+    "interrogacao": {
+      "linha": 3,
+      "quadro_inicial": 0,
+      "quadros": 4,
+      "duracao_quadro": 0.2,
+      "repetir": true
+    },
+    "bloco_usado": {
+      "linha": 4,
+      "quadro_inicial": 0,
+      "quadros": 1,
+      "duracao_quadro": 0.18,
+      "repetir": true
+    },
+    "bloco_solido": {
+      "linha": 5,
+      "quadro_inicial": 0,
+      "quadros": 1,
+      "duracao_quadro": 0.18,
+      "repetir": true
+    },
+    "tubo_topo_esq": {
+      "linha": 6,
+      "quadro_inicial": 0,
+      "quadros": 1,
+      "duracao_quadro": 0.18,
+      "repetir": true
+    },
+    "tubo_topo_dir": {
+      "linha": 7,
+      "quadro_inicial": 0,
+      "quadros": 1,
+      "duracao_quadro": 0.18,
+      "repetir": true
+    },
+    "tubo_corpo_esq": {
+      "linha": 8,
+      "quadro_inicial": 0,
+      "quadros": 1,
+      "duracao_quadro": 0.18,
+      "repetir": true
+    },
+    "tubo_corpo_dir": {
+      "linha": 9,
+      "quadro_inicial": 0,
+      "quadros": 1,
+      "duracao_quadro": 0.18,
+      "repetir": true
+    },
+    "castelo_tijolo": {
+      "linha": 10,
+      "quadro_inicial": 0,
+      "quadros": 1,
+      "duracao_quadro": 0.18,
+      "repetir": true
+    },
+    "espinhos": {
+      "linha": 11,
+      "quadro_inicial": 0,
+      "quadros": 1,
+      "duracao_quadro": 0.18,
+      "repetir": true
+    },
+    "lava": {
+      "linha": 12,
+      "quadro_inicial": 0,
+      "quadros": 3,
+      "duracao_quadro": 0.18,
+      "repetir": true
+    }
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "arquivo": "prisao_de_gelo.png",
+  "largura_quadro": 24,
+  "altura_quadro": 32,
+  "escala": 3,
+  "animacoes": {
+    "intacta": {
+      "linha": 0,
+      "quadro_inicial": 0,
+      "quadros": 2,
+      "duracao_quadro": 0.5,
+      "repetir": true
+    },
+    "rachando": {
+      "linha": 1,
+      "quadro_inicial": 0,
+      "quadros": 2,
+      "duracao_quadro": 0.12,
+      "repetir": true
+    },
+    "estilhacando": {
+      "linha": 2,
+      "quadro_inicial": 0,
+      "quadros": 4,
+      "duracao_quadro": 0.08,
+      "repetir": false
+    }
+  }
+}

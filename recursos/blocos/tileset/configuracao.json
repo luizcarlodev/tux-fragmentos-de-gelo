@@ -1,0 +1,162 @@
+{
+  "arquivo": "tileset.png",
+  "largura_quadro": 16,
+  "altura_quadro": 16,
+  "escala": 3,
+  "animacoes": {
+    "neve": {
+      "linha": 0,
+      "quadro_inicial": 0,
+      "quadros": 1,
+      "duracao_quadro": 0.18,
+      "repetir": true
+    },
+    "solo_congelado": {
+      "linha": 1,
+      "quadro_inicial": 0,
+      "quadros": 1,
+      "duracao_quadro": 0.18,
+      "repetir": true
+    },
+    "bloco_gelo": {
+      "linha": 2,
+      "quadro_inicial": 0,
+      "quadros": 1,
+      "duracao_quadro": 0.18,
+      "repetir": true
+    },
+    "cristal": {
+      "linha": 3,
+      "quadro_inicial": 0,
+      "quadros": 4,
+      "duracao_quadro": 0.2,
+      "repetir": true
+    },
+    "cristal_usado": {
+      "linha": 4,
+      "quadro_inicial": 0,
+      "quadros": 1,
+      "duracao_quadro": 0.18,
+      "repetir": true
+    },
+    "bloco_pedra": {
+      "linha": 5,
+      "quadro_inicial": 0,
+      "quadros": 1,
+      "duracao_quadro": 0.18,
+      "repetir": true
+    },
+    "pilar_topo_esq": {
+      "linha": 6,
+      "quadro_inicial": 0,
+      "quadros": 1,
+      "duracao_quadro": 0.18,
+      "repetir": true
+    },
+    "pilar_topo_dir": {
+      "linha": 7,
+      "quadro_inicial": 0,
+      "quadros": 1,
+      "duracao_quadro": 0.18,
+      "repetir": true
+    },
+    "pilar_corpo_esq": {
+      "linha": 8,
+      "quadro_inicial": 0,
+      "quadros": 1,
+      "duracao_quadro": 0.18,
+      "repetir": true
+    },
+    "pilar_corpo_dir": {
+      "linha": 9,
+      "quadro_inicial": 0,
+      "quadros": 1,
+      "duracao_quadro": 0.18,
+      "repetir": true
+    },
+    "tijolo_castelo": {
+      "linha": 10,
+      "quadro_inicial": 0,
+      "quadros": 1,
+      "duracao_quadro": 0.18,
+      "repetir": true
+    },
+    "espinhos_gelo": {
+      "linha": 11,
+      "quadro_inicial": 0,
+      "quadros": 1,
+      "duracao_quadro": 0.18,
+      "repetir": true
+    },
+    "agua_gelida": {
+      "linha": 12,
+      "quadro_inicial": 0,
+      "quadros": 3,
+      "duracao_quadro": 0.18,
+      "repetir": true
+    },
+    "estalactite": {
+      "linha": 13,
+      "quadro_inicial": 0,
+      "quadros": 1,
+      "duracao_quadro": 0.18,
+      "repetir": true
+    },
+    "neve_caverna": {
+      "linha": 14,
+      "quadro_inicial": 0,
+      "quadros": 1,
+      "duracao_quadro": 0.18,
+      "repetir": true
+    },
+    "pedra_caverna": {
+      "linha": 15,
+      "quadro_inicial": 0,
+      "quadros": 1,
+      "duracao_quadro": 0.18,
+      "repetir": true
+    },
+    "cristal_luminoso": {
+      "linha": 16,
+      "quadro_inicial": 0,
+      "quadros": 3,
+      "duracao_quadro": 0.25,
+      "repetir": true
+    },
+    "ponte_gelo": {
+      "linha": 17,
+      "quadro_inicial": 0,
+      "quadros": 1,
+      "duracao_quadro": 0.18,
+      "repetir": true
+    },
+    "parede_rachada": {
+      "linha": 18,
+      "quadro_inicial": 0,
+      "quadros": 2,
+      "duracao_quadro": 0.7,
+      "repetir": true
+    },
+    "gelo_profundo": {
+      "linha": 19,
+      "quadro_inicial": 0,
+      "quadros": 1,
+      "duracao_quadro": 0.18,
+      "repetir": true
+    },
+    "chao_castelo": {
+      "linha": 20,
+      "quadro_inicial": 0,
+      "quadros": 1,
+      "duracao_quadro": 0.18,
+      "repetir": true
+    },
+    "topo_castelo": {
+      "linha": 21,
+      "quadro_inicial": 0,
+      "quadros": 1,
+      "duracao_quadro": 0.18,
+      "repetir": true
+    }
+  }
+}

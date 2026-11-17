@@ -1,0 +1,40 @@
+{
+  "volume_geral": 0.8,
+  "volume_musica": 0.7,
+  "volume_efeitos": 0.8,
+  "resolucao": [
+    1280,
+    720
+  ],
+  "tela_cheia": false,
+  "controles": {
+    "esquerda": [
+      "a",
+      "left"
+    ],
+    "direita": [
+      "d",
+      "right"
+    ],
+    "pular": [
+      "space",
+      "up"
+    ],
+    "correr": [
+      "left shift",
+      "right shift"
+    ],
+    "atacar": [
+      "j",
+      "z"
+    ],
+    "dash": [
+      "k",
+      "x"
+    ],
+    "pausar": [
+      "escape",
+      "p"
+    ]
+  }
+}

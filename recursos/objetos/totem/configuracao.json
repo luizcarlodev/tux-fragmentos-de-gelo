@@ -1,0 +1,26 @@
+{
+  "arquivo": "totem.png",
+  "largura_quadro": 16,
+  "altura_quadro": 32,
+  "escala": 3,
+  "animacoes": {
+    "baixada": {
+      "linha": 0,
+      "quadro_inicial": 0,
+      "quadros": 1,
+      "duracao_quadro": 0.12,
+      "repetir": true
+    },
+    "levantada": {
+      "linha": 1,
+      "quadro_inicial": 0,
+      "quadros": 2,
+      "duracao_quadro": 0.2,
+      "repetir": true
+    }
+  },
+  "caixa_colisao": [
+    40,
+    96
+  ]
+}

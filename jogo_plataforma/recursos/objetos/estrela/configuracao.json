@@ -1,0 +1,19 @@
+{
+  "arquivo": "item.png",
+  "largura_quadro": 16,
+  "altura_quadro": 16,
+  "escala": 3,
+  "animacoes": {
+    "brilho": {
+      "linha": 0,
+      "quadro_inicial": 0,
+      "quadros": 2,
+      "duracao_quadro": 0.12,
+      "repetir": true
+    }
+  },
+  "caixa_colisao": [
+    40,
+    40
+  ]
+}

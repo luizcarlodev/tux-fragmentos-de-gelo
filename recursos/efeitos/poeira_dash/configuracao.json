@@ -1,0 +1,15 @@
+{
+  "arquivo": "efeito.png",
+  "largura_quadro": 16,
+  "altura_quadro": 16,
+  "escala": 3,
+  "animacoes": {
+    "dash": {
+      "linha": 0,
+      "quadro_inicial": 0,
+      "quadros": 3,
+      "duracao_quadro": 0.06,
+      "repetir": false
+    }
+  }
+}

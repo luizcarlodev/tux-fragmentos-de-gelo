@@ -1,0 +1,19 @@
+{
+  "arquivo": "plataforma_gelo.png",
+  "largura_quadro": 48,
+  "altura_quadro": 8,
+  "escala": 3,
+  "animacoes": {
+    "parada": {
+      "linha": 0,
+      "quadro_inicial": 0,
+      "quadros": 1,
+      "duracao_quadro": 0.12,
+      "repetir": true
+    }
+  },
+  "caixa_colisao": [
+    144,
+    24
+  ]
+}

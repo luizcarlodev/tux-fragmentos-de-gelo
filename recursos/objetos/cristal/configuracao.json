@@ -1,0 +1,19 @@
+{
+  "arquivo": "cristal.png",
+  "largura_quadro": 16,
+  "altura_quadro": 16,
+  "escala": 3,
+  "animacoes": {
+    "girando": {
+      "linha": 0,
+      "quadro_inicial": 0,
+      "quadros": 4,
+      "duracao_quadro": 0.1,
+      "repetir": true
+    }
+  },
+  "caixa_colisao": [
+    30,
+    38
+  ]
+}
