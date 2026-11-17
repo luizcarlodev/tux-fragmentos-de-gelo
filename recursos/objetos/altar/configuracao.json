@@ -1,0 +1,22 @@
+{
+  "arquivo": "altar.png",
+  "largura_quadro": 32,
+  "altura_quadro": 32,
+  "escala": 3,
+  "animacoes": {
+    "parado": {
+      "linha": 0,
+      "quadro_inicial": 0,
+      "quadros": 1,
+      "duracao_quadro": 0.12,
+      "repetir": true
+    },
+    "ativo": {
+      "linha": 1,
+      "quadro_inicial": 0,
+      "quadros": 2,
+      "duracao_quadro": 0.2,
+      "repetir": true
+    }
+  }
+}

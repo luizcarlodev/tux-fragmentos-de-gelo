@@ -1,0 +1,47 @@
+{
+  "arquivo": "personagem.png",
+  "largura_quadro": 16,
+  "altura_quadro": 22,
+  "escala": 3,
+  "animacoes": {
+    "parada": {
+      "linha": 0,
+      "quadro_inicial": 0,
+      "quadros": 2,
+      "duracao_quadro": 0.5,
+      "repetir": true
+    },
+    "feliz": {
+      "linha": 1,
+      "quadro_inicial": 0,
+      "quadros": 2,
+      "duracao_quadro": 0.18,
+      "repetir": true
+    },
+    "presa": {
+      "linha": 2,
+      "quadro_inicial": 0,
+      "quadros": 2,
+      "duracao_quadro": 0.6,
+      "repetir": true
+    },
+    "livre": {
+      "linha": 3,
+      "quadro_inicial": 0,
+      "quadros": 1,
+      "duracao_quadro": 1.0,
+      "repetir": true
+    },
+    "abracando": {
+      "linha": 4,
+      "quadro_inicial": 0,
+      "quadros": 2,
+      "duracao_quadro": 0.4,
+      "repetir": true
+    }
+  },
+  "caixa_colisao": [
+    34,
+    58
+  ]
+}

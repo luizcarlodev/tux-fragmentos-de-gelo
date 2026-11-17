@@ -1,0 +1,40 @@
+{
+  "arquivo": "inimigo.png",
+  "largura_quadro": 24,
+  "altura_quadro": 24,
+  "escala": 3,
+  "animacoes": {
+    "andando": {
+      "linha": 0,
+      "quadro_inicial": 0,
+      "quadros": 4,
+      "duracao_quadro": 0.2,
+      "repetir": true
+    },
+    "furioso": {
+      "linha": 1,
+      "quadro_inicial": 0,
+      "quadros": 4,
+      "duracao_quadro": 0.1,
+      "repetir": true
+    },
+    "dano": {
+      "linha": 2,
+      "quadro_inicial": 0,
+      "quadros": 1,
+      "duracao_quadro": 1.0,
+      "repetir": true
+    },
+    "esmagado": {
+      "linha": 3,
+      "quadro_inicial": 0,
+      "quadros": 1,
+      "duracao_quadro": 1.0,
+      "repetir": true
+    }
+  },
+  "caixa_colisao": [
+    60,
+    66
+  ]
+}

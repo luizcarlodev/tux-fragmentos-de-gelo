@@ -1,0 +1,479 @@
+{
+ "nome": "As Cavernas Congeladas",
+ "tamanho_bloco": 48,
+ "colunas": 288,
+ "linhas": 22,
+ "tempo_limite": 720,
+ "tileset": "blocos/tileset",
+ "legenda": {
+  " ": {
+   "descricao": "vazio"
+  },
+  "G": {
+   "tipo": "bloco",
+   "sprite": "neve",
+   "descricao": "chão coberto de neve"
+  },
+  "T": {
+   "tipo": "bloco",
+   "sprite": "solo_congelado",
+   "descricao": "solo congelado"
+  },
+  "B": {
+   "tipo": "bloco",
+   "sprite": "bloco_gelo",
+   "descricao": "bloco de gelo (quebra com cabeçada ou ataque)",
+   "quebravel": true
+  },
+  "?": {
+   "tipo": "bloco",
+   "sprite": "cristal",
+   "descricao": "bloco de cristal com cristais",
+   "recompensa": "moeda",
+   "sprite_usado": "cristal_usado"
+  },
+  "M": {
+   "tipo": "bloco",
+   "sprite": "cristal",
+   "descricao": "bloco de cristal com coração de gelo (vida extra)",
+   "recompensa": "coracao_gelo"
+  },
+  "*": {
+   "tipo": "bloco",
+   "sprite": "cristal",
+   "descricao": "bloco de cristal com Cristal Mágico (invencibilidade)",
+   "recompensa": "cristal_magico"
+  },
+  "S": {
+   "tipo": "bloco",
+   "sprite": "bloco_pedra",
+   "descricao": "bloco de pedra congelada (degraus, ilhas)"
+  },
+  "a": {
+   "tipo": "bloco",
+   "sprite": "pilar_topo_esq",
+   "descricao": "pilar de gelo: topo esquerdo"
+  },
+  "b": {
+   "tipo": "bloco",
+   "sprite": "pilar_topo_dir",
+   "descricao": "pilar de gelo: topo direito"
+  },
+  "c": {
+   "tipo": "bloco",
+   "sprite": "pilar_corpo_esq",
+   "descricao": "pilar de gelo: corpo esquerdo"
+  },
+  "d": {
+   "tipo": "bloco",
+   "sprite": "pilar_corpo_dir",
+   "descricao": "pilar de gelo: corpo direito"
+  },
+  "K": {
+   "tipo": "bloco",
+   "sprite": "tijolo_castelo",
+   "descricao": "tijolo do castelo"
+  },
+  "k": {
+   "tipo": "bloco",
+   "sprite": "chao_castelo",
+   "descricao": "chão do castelo (topo)"
+  },
+  "q": {
+   "tipo": "bloco",
+   "sprite": "topo_castelo",
+   "descricao": "topo de muralha do castelo"
+  },
+  "E": {
+   "tipo": "bloco",
+   "sprite": "espinhos_gelo",
+   "descricao": "espinhos de gelo (dano)",
+   "solido": false,
+   "perigo": "dano"
+  },
+  "V": {
+   "tipo": "bloco",
+   "sprite": "agua_gelida",
+   "descricao": "água gélida (mata)",
+   "solido": false,
+   "perigo": "morte"
+  },
+  "N": {
+   "tipo": "bloco",
+   "sprite": "neve_caverna",
+   "descricao": "chão de caverna com neve"
+  },
+  "R": {
+   "tipo": "bloco",
+   "sprite": "pedra_caverna",
+   "descricao": "pedra de caverna"
+  },
+  "L": {
+   "tipo": "bloco",
+   "sprite": "cristal_luminoso",
+   "descricao": "cristal luminoso (sólido, decorativo)"
+  },
+  "W": {
+   "tipo": "bloco",
+   "sprite": "estalactite",
+   "descricao": "estalactite afiada no teto (dano)",
+   "solido": false,
+   "perigo": "dano",
+   "perigo_zona": "topo"
+  },
+  "g": {
+   "tipo": "bloco",
+   "sprite": "gelo_profundo",
+   "descricao": "gelo profundo"
+  },
+  "p": {
+   "tipo": "bloco",
+   "sprite": "ponte_gelo",
+   "descricao": "ponte de gelo"
+  },
+  "X": {
+   "tipo": "bloco",
+   "sprite": "parede_rachada",
+   "descricao": "parede rachada (SEGREDO: quebra com 3 ataques)",
+   "fragil": true,
+   "resistencia": 3,
+   "revela": "porta_secreta"
+  },
+  "o": {
+   "tipo": "cristal",
+   "descricao": "cristal coletável"
+  },
+  "1": {
+   "tipo": "inimigo",
+   "inimigo": "criatura_de_neve",
+   "descricao": "Criatura de Neve (anda de um lado a outro)"
+  },
+  "2": {
+   "tipo": "inimigo",
+   "inimigo": "morcego_glacial",
+   "descricao": "Morcego Glacial (voa e solta estilhaços)"
+  },
+  "3": {
+   "tipo": "inimigo",
+   "inimigo": "pinguim_selvagem",
+   "descricao": "Pinguim Selvagem (persegue; 2 golpes)"
+  },
+  "4": {
+   "tipo": "inimigo",
+   "inimigo": "golem_de_gelo",
+   "descricao": "Golem de Gelo (lento; 3 golpes)"
+  },
+  "5": {
+   "tipo": "inimigo",
+   "inimigo": "morcego_glacial",
+   "opcoes": {
+    "mergulha": true
+   },
+   "descricao": "Morcego Glacial que mergulha sobre o Tux"
+  },
+  "C": {
+   "tipo": "totem",
+   "descricao": "totem glacial (checkpoint)"
+  },
+  "J": {
+   "tipo": "inicio",
+   "descricao": "posição inicial do Tux"
+  },
+  "F": {
+   "tipo": "altar",
+   "descricao": "altar do Fragmento de Gelo (base)"
+  },
+  "P": {
+   "tipo": "portal",
+   "descricao": "portal de saída da fase"
+  },
+  "H": {
+   "tipo": "castelo",
+   "descricao": "Castelo (canto inferior esquerdo)"
+  },
+  "Q": {
+   "tipo": "porta_secreta",
+   "descricao": "portal secreto (aparece quando a parede rachada cai)"
+  },
+  "Z": {
+   "tipo": "princesa",
+   "descricao": "Princesa do Gelo aprisionada (salão final)"
+  },
+  "O": {
+   "tipo": "lembranca",
+   "descricao": "lembrança dourada (câmara secreta)"
+  }
+ },
+ "grade": [
+  "                                                                                                                                                                                      RRRRRRRRRR                                                                                                ",
+  "                                                                                                                                                                                      RRRRRRRRRR                                                                                                ",
+  "                                                                                                                                                                      ooo             RRRRRRRRRR                                                                                                ",
+  "                                                                                                                                                              ooo    o   o            R       RR                                                                                                ",
+  "                                                                                                                                                                          4      oooooX       RR                                                                                                ",
+  "                                                                                                                                                        oo   pppp                     X   Q   RR                                                                                                ",
+  "                                                                                                                                                                    ppppppppppp ppppppRRRRRRRRRR                                                                               5                ",
+  "                                                                                                                                                       ppp                            RRRRRRRRRR                                                                                                ",
+  "                                                                                                                                   5              o                                   RRRRRRRRRR                                                                         2        ooo           ",
+  "                                                                                                                         2                                                            RRRRRRRRRR                                                                                          F   P ",
+  "                                                                                                             2                      ooo          ppp             5               ppp                             5                                                          ooo        ppppppppp",
+  "                                                                                 2                                   ooo           o   o                o                                                                                                                         ppp           ",
+  "                                        2                                                ooo                        o   o    oooo                                                                                                    2                                ooo                       ",
+  "                                                                          ooo           o   o                  oo             C                        ppp                                                           ooo                     ooo                            ppp                 ",
+  "                                                          ooo            o   o                                              ppppp                 o         ?M?                     ppp                             o   o                   o   o                                               ",
+  "           ooo   ?B?B?                                   o   o                    B*B                    oo    pp                                                ooooo                               oooooooo              B?B                                        ppp                       ",
+  "                            oooo                                                                                                                 ppp                         oooooo                                                                         S                                   ",
+  "                                                                                         pp             ppp                             ppp  o  o  o  o                                  ppp                              ooooo o o o o o     pp           SS                                   ",
+  "   J                      1        1              1               3                              1                                             1           3    EEE    1    EE     3             C             3               4                    1     SSS   1                               ",
+  "NNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNgggggggggggggVVVVgggggggggggVVVVVgggggggggVVVVVVgggggggg                                      NNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNgggggggVVVVVVggggggggVVVVVgggggggggggggggggggVVVVVVggggNNNNNNNNNNNNN                             ",
+  "RRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRgggggggggggggVVVVgggggggggggVVVVVgggggggggVVVVVVgggggggg                                      RRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRgggggggVVVVVVggggggggVVVVVgggggggggggggggggggVVVVVVggggRRRRRRRRRRRRR                             ",
+  "RRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRgggggggggggggVVVVgggggggggggVVVVVgggggggggVVVVVVgggggggg                                      RRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRgggggggVVVVVVggggggggVVVVVgggggggggggggggggggVVVVVVggggRRRRRRRRRRRRR                             "
+ ],
+ "plataformas_moveis": [
+  {
+   "coluna_centro": 118.5,
+   "linha": 16,
+   "largura_blocos": 3,
+   "eixo": "x",
+   "amplitude": 2.2,
+   "periodo": 5.0,
+   "fase": 0.0
+  },
+  {
+   "coluna_centro": 133.5,
+   "linha": 15,
+   "largura_blocos": 3,
+   "eixo": "y",
+   "amplitude": 1.5,
+   "periodo": 4.0,
+   "fase": 0.0
+  },
+  {
+   "coluna_centro": 200.5,
+   "linha": 17,
+   "largura_blocos": 2,
+   "eixo": "x",
+   "amplitude": 1.6,
+   "periodo": 4.5,
+   "fase": 0.0
+  },
+  {
+   "coluna_centro": 266,
+   "linha": 17,
+   "largura_blocos": 2,
+   "eixo": "x",
+   "amplitude": 1.5,
+   "periodo": 4.0,
+   "fase": 0.0
+  }
+ ],
+ "decoracoes": [
+  {
+   "imagem": "placa_gelo",
+   "coluna": 6,
+   "linha_base": 19
+  },
+  {
+   "imagem": "estalagmite",
+   "coluna": 9,
+   "linha_base": 19
+  },
+  {
+   "imagem": "cristal_luminoso",
+   "coluna": 13,
+   "linha_base": 19
+  },
+  {
+   "imagem": "cristal_grande",
+   "coluna": 21,
+   "linha_base": 19
+  },
+  {
+   "imagem": "estalagmite",
+   "coluna": 30,
+   "linha_base": 19
+  },
+  {
+   "imagem": "cristal_luminoso",
+   "coluna": 41,
+   "linha_base": 19
+  },
+  {
+   "imagem": "cristal_luminoso",
+   "coluna": 48,
+   "linha_base": 19
+  },
+  {
+   "imagem": "cristal_luminoso",
+   "coluna": 64,
+   "linha_base": 19
+  },
+  {
+   "imagem": "cristal_luminoso",
+   "coluna": 84,
+   "linha_base": 19
+  },
+  {
+   "imagem": "cristal_luminoso",
+   "coluna": 96,
+   "linha_base": 19
+  },
+  {
+   "imagem": "estalagmite",
+   "coluna": 70,
+   "linha_base": 19
+  },
+  {
+   "imagem": "cristal_grande",
+   "coluna": 54,
+   "linha_base": 19
+  },
+  {
+   "imagem": "tocha_gelo",
+   "coluna": 125,
+   "linha_base": 14
+  },
+  {
+   "imagem": "tocha_gelo",
+   "coluna": 128,
+   "linha_base": 14
+  },
+  {
+   "imagem": "estalactite_frente",
+   "coluna": 108,
+   "linha_base": 3,
+   "frente": true
+  },
+  {
+   "imagem": "estalactite_frente",
+   "coluna": 122,
+   "linha_base": 3,
+   "frente": true
+  },
+  {
+   "imagem": "estatua_pinguim",
+   "coluna": 179,
+   "linha_base": 6
+  },
+  {
+   "imagem": "cristal_luminoso",
+   "coluna": 174,
+   "linha_base": 6
+  },
+  {
+   "imagem": "cristal_grande",
+   "coluna": 148,
+   "linha_base": 19
+  },
+  {
+   "imagem": "estalagmite",
+   "coluna": 163,
+   "linha_base": 19
+  },
+  {
+   "imagem": "cristal_luminoso",
+   "coluna": 170,
+   "linha_base": 19
+  },
+  {
+   "imagem": "cristal_luminoso",
+   "coluna": 195,
+   "linha_base": 19
+  },
+  {
+   "imagem": "cristal_luminoso",
+   "coluna": 207,
+   "linha_base": 19
+  },
+  {
+   "imagem": "cristal_luminoso",
+   "coluna": 220,
+   "linha_base": 19
+  },
+  {
+   "imagem": "cristal_luminoso",
+   "coluna": 232,
+   "linha_base": 19
+  },
+  {
+   "imagem": "tocha_gelo",
+   "coluna": 217,
+   "linha_base": 19
+  },
+  {
+   "imagem": "tocha_gelo",
+   "coluna": 235,
+   "linha_base": 19
+  },
+  {
+   "imagem": "tocha_gelo",
+   "coluna": 280,
+   "linha_base": 10
+  },
+  {
+   "imagem": "tocha_gelo",
+   "coluna": 287,
+   "linha_base": 10
+  },
+  {
+   "imagem": "cristal_grande",
+   "coluna": 283,
+   "linha_base": 10
+  },
+  {
+   "imagem": "estandarte_gelo",
+   "coluna": 278,
+   "linha_base": 10
+  }
+ ],
+ "temas": {
+  "cavernas": {
+   "musica": "cavernas",
+   "neve": {
+    "densidade": 14,
+    "vento": -6
+   },
+   "camadas": [
+    {
+     "imagem": "cenarios/cavernas/ceu.png",
+     "fator": 0.0
+    },
+    {
+     "imagem": "cenarios/cavernas/paredes_longe.png",
+     "fator": 0.22
+    },
+    {
+     "imagem": "cenarios/cavernas/cristais_perto.png",
+     "fator": 0.5
+    },
+    {
+     "imagem": "cenarios/cavernas/estalactites.png",
+     "fator": 0.62
+    }
+   ]
+  }
+ },
+ "zonas": [
+  {
+   "coluna_inicio": 0,
+   "tema": "cavernas"
+  }
+ ],
+ "dialogos": [
+  {
+   "coluna": 4,
+   "texto": "As Cavernas Congeladas...\nO segundo fragmento deve estar aqui no fundo.",
+   "duracao": 4.2
+  },
+  {
+   "coluna": 196,
+   "texto": "Cuidado com os lagos... a água é gélida demais!",
+   "duracao": 3.4
+  },
+  {
+   "coluna": 247,
+   "texto": "O fragmento brilha lá em cima...",
+   "duracao": 3.4
+  }
+ ],
+ "fragmento": 2
+}

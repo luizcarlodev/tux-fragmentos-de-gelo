@@ -1,0 +1,15 @@
+{
+  "arquivo": "bandeira.png",
+  "largura_quadro": 16,
+  "altura_quadro": 16,
+  "escala": 3,
+  "animacoes": {
+    "tremulando": {
+      "linha": 0,
+      "quadro_inicial": 0,
+      "quadros": 2,
+      "duracao_quadro": 0.25,
+      "repetir": true
+    }
+  }
+}
